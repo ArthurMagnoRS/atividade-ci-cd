@@ -1,0 +1,20 @@
+name: "ci"
+on:
+  - push
+  - pull_request
+jobs:
+    job:
+      name: testes
+      runs-on: ubuntu-latest
+      permissions:
+        actions: write
+        checks: write
+      steps:
+        - uses: $/.github/actions/checkout
+        - uses: $/.github/actions/setup-node
+        - run: npm ci
+        - run: npm test
+        
+        
+        
+          
