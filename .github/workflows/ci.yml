@@ -12,6 +12,8 @@ jobs:
       steps:
         - uses: $/.github/actions/checkout
         - uses: $/.github/actions/setup-node
+          with:
+            node-version: "22"
         - run: npm ci
         - run: npm test
         
